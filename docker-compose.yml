@@ -32,6 +32,9 @@ services:
   e2e-firefox:
     image: "cypress/included:4.0.1"
     command: "--browser firefox"
+    # if you want to debug FF run, pass DEBUG variable like
+    environment:
+      - DEBUG=cypress:server:browsers:firefox-util,cypress:server:util:process_profiler
     volumes:
       - ./cypress:/cypress
       - ./cypress.json:/cypress.json

@@ -28,9 +28,6 @@ jobs:
   test-firefox:
     machine:
       docker_layer_caching: false
-    environment:
-      # enable FF specific debugging logs
-      DEBUG: cypress:server:browsers:firefox-util,cypress:server:util:process_profiler
     steps:
     - checkout
     - run: docker pull cypress/included:4.0.1
