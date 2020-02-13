@@ -14,3 +14,7 @@ docker-compose run e2e-chrome
 ```
 
 [included]: https://github.com/cypress-io/cypress-docker-images/tree/master/included#cypressincluded
+
+## Examples
+
+Find more Docker + Cypress examples in [Cypress Docker docs](https://on.cypress.io/docker)
