@@ -1,4 +1,4 @@
-# cypress-example-docker-compose-included
+# cypress-example-docker-compose-included [![CircleCI](https://circleci.com/gh/cypress-io/cypress-example-docker-compose-included/tree/master.svg?style=svg)](https://circleci.com/gh/cypress-io/cypress-example-docker-compose-included/tree/master)
 > Example showing `docker-compose` running local Cypress tests inside a container using [cypress/included][included] image
 
 See [docker-compose.yml](docker-compose.yml) file
