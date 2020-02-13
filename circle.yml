@@ -13,7 +13,9 @@ jobs:
     - run: docker pull cypress/included:4.0.1
     - run: docker-compose run e2e-electron
     - run: docker-compose run e2e-chrome
-    - run: docker-compose run e2e-firefox
+    - run:
+        command: docker-compose run e2e-firefox
+        no_output_timeout: 3m
 workflows:
   build:
     jobs:
