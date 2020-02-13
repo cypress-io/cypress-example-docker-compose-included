@@ -1,6 +1,6 @@
 version: 2
 jobs:
-  build:
+  test-electron:
     # to speed up Dockers builds turn on layer caching
     # which is a paid CircleCI feature
     # https://circleci.com/docs/2.0/docker-layer-caching/
@@ -11,13 +11,34 @@ jobs:
     # to avoid long "pulling image" progress on the first time we use
     # the Docker image, pull it first
     - run: docker pull cypress/included:4.0.1
-    - run: docker-compose run e2e-electron
-    - run: docker-compose run e2e-chrome
+    - run:
+        command: docker-compose run e2e-electron
+        no_output_timeout: 3m
+
+  test-chrome:
+    machine:
+      docker_layer_caching: false
+    steps:
+    - checkout
+    - run: docker pull cypress/included:4.0.1
+    - run:
+        command: docker-compose run e2e-chrome
+        no_output_timeout: 3m
+
+  test-firefox:
+    machine:
+      docker_layer_caching: false
+    steps:
+    - checkout
+    - run: docker pull cypress/included:4.0.1
     - run:
         command: docker-compose run e2e-firefox
         no_output_timeout: 3m
+
 workflows:
+  version: 2
   build:
     jobs:
-    - build
-  version: 2
+    - test-electron
+    - test-chrome
+    - test-firefox
