@@ -8,6 +8,9 @@ jobs:
       docker_layer_caching: false
     steps:
     - checkout
+    # to avoid long "pulling image" progress on the first time we use
+    # the Docker image, pull it first
+    - run: docker pull cypress/included:4.0.1
     - run: docker-compose run e2e-electron
     - run: docker-compose run e2e-chrome
 workflows:
