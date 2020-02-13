@@ -13,6 +13,7 @@ jobs:
     - run: docker pull cypress/included:4.0.1
     - run: docker-compose run e2e-electron
     - run: docker-compose run e2e-chrome
+    - run: docker-compose run e2e-firefox
 workflows:
   build:
     jobs:

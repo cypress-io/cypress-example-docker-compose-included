@@ -11,7 +11,12 @@ docker-compose run e2e-electron
 
 # run tests using Chrome browser pre-installed in cypress/included image
 docker-compose run e2e-chrome
+
+# run tests using Firefox browser (also pre-installed)
+docker-compose run e2e-firefox
 ```
+
+The tests work against [https://example.cypress.io/](https://example.cypress.io/) and use specs from [cypress-example-kitchensink](https://github.com/cypress-io/cypress-example-kitchensink)
 
 [included]: https://github.com/cypress-io/cypress-docker-images/tree/master/included#cypressincluded
 
