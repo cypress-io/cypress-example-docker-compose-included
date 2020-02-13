@@ -31,7 +31,7 @@ services:
   # note that both Chrome and Firefox browsers were pre-installed in the Docker image
   e2e-firefox:
     image: "cypress/included:4.0.1"
-    command: "--browser firefox"
+    command: "--browser firefox --config video=false"
     # if you want to debug FF run, pass DEBUG variable like
     environment:
       - DEBUG=cypress:server:browsers:firefox-util,cypress:server:util:process_profiler
