@@ -10,7 +10,7 @@ jobs:
     - checkout
     # to avoid long "pulling image" progress on the first time we use
     # the Docker image, pull it first
-    - run: docker pull cypress/included:4.0.1
+    - run: docker pull cypress/included:4.1.0
     - run:
         command: docker-compose run e2e-electron
         no_output_timeout: 3m
@@ -20,7 +20,7 @@ jobs:
       docker_layer_caching: false
     steps:
     - checkout
-    - run: docker pull cypress/included:4.0.1
+    - run: docker pull cypress/included:4.1.0
     - run:
         command: docker-compose run e2e-chrome
         no_output_timeout: 3m
@@ -30,7 +30,7 @@ jobs:
       docker_layer_caching: false
     steps:
     - checkout
-    - run: docker pull cypress/included:4.0.1
+    - run: docker pull cypress/included:4.1.0
     - run:
         command: docker-compose run e2e-firefox
         no_output_timeout: 3m
